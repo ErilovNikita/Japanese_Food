@@ -19,12 +19,20 @@ services:
     container_name: food_postgresql
     volumes:
       - postgres_data:/var/lib/postgresql/data/
-    expose:
-      - 5432
+    # expose:
+    #   - 5432
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_USER=fastapi
       - POSTGRES_PASSWORD=fastapi
       - POSTGRES_DB=fastapi
-
+  # front:
+  #   build: front/
+  #   command: npm run test:dev
+  #   ports:
+  #     - "8089:8089"
+  #   depends_on:
+  #     - api
 volumes:
   postgres_data:
