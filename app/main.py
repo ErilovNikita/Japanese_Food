@@ -3,7 +3,7 @@ import sys
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.Rest import public
+from app.Rest import public, private
 from app.Utils.db import generalPosrgresBase
 
 app = FastAPI()
@@ -27,3 +27,4 @@ async def shutdown():
         await generalPosrgresBase.disconnect()
 
 app.include_router(public.router, prefix="/api")
+app.include_router(private.router, prefix="/api")

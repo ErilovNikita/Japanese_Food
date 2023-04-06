@@ -24,9 +24,9 @@ class User(ormar.Model):
     created:         str = ormar.Text(max_length=255, nullable=True)
     roles:           str = ormar.Text(max_length=255, nullable=True)
 
-class Foot(ormar.Model):
+class Food(ormar.Model):
     class Meta(generalPosrgres):
-        tablename = "foot"
+        tablename = "food"
     number:          int = ormar.Integer(minimal=0, primary_key=True)
     name:            str = ormar.Text(max_length=255, nullable=True)
     price:           int = ormar.Integer(minimal=0, nullable=True)
