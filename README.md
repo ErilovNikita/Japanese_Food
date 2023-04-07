@@ -2,7 +2,10 @@
 
 ## Оглавление
 * API
-    * [Позиции меню](/docs/food.md)
+    * [Позиция меню](/docs/food.md)
+    * [Роли](/docs/role.md)
+    * [Заказ](/docs/order.md)
+    * [Пользователь](/docs/user.md)
 * [Запуск приложения](#starting)
 
 
