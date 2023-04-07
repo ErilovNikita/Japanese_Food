@@ -1,10 +1,10 @@
 # API | Пользователи
 
 ## Оглавление
-* [Получить информацию о всех сессиях](#getAllSesions)
-* [Получить информацию о пользователе](#getMe)
-* [Создание нового пользователя](#create)
-* [Удалить пользователя](#delete)
+* [Получить информацию о всех сессиях](#getAllSesions) <img src="https://img.shields.io/badge/-Auth-red">
+* [Получить информацию о пользователе](#getMe) <img src="https://img.shields.io/badge/-Auth-red">
+* [Создание нового пользователя](#create) <img src="https://img.shields.io/badge/-All-green">
+* [Удалить пользователя](#delete) <img src="https://img.shields.io/badge/-Auth-red">
 
 
 <a name="getAllSession"></a>

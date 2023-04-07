@@ -1,11 +1,11 @@
 # API | Заказ
 
 ## Оглавление
-* [Получить список всех заказов](#getAll)
-* [Получить список моих заказов](#getMe)
-* [Создание нового заказа](#create)
-* [Редактирование заказа](#edit)
-* [Удаление заказа](#delete)
+* [Получить список всех заказов](#getAll) <img src="https://img.shields.io/badge/-Auth-red">
+* [Получить список моих заказов](#getMe) <img src="https://img.shields.io/badge/-Auth-red">
+* [Создание нового заказа](#create) <img src="https://img.shields.io/badge/-Auth-red">
+* [Редактирование заказа](#edit) <img src="https://img.shields.io/badge/-Auth-red">
+* [Удаление заказа](#delete) <img src="https://img.shields.io/badge/-Auth-red">
 
 <a name="getAll"></a>
 #### Получить список всех заказов

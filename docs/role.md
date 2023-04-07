@@ -1,10 +1,10 @@
 # API | Роли
 
 ## Оглавление
-* [Получить весь перечень ролей](#getAll)
-* [Создании новой роли](#create)
-* [Редактирование роли](#edit)
-* [Удалить роли](#delete)
+* [Получить весь перечень ролей](#getAll) <img src="https://img.shields.io/badge/-Auth-red">
+* [Создании новой роли](#create) <img src="https://img.shields.io/badge/-Auth-red">
+* [Редактирование роли](#edit) <img src="https://img.shields.io/badge/-Auth-red">
+* [Удалить роли](#delete) <img src="https://img.shields.io/badge/-Auth-red">
 
 <a name="getAll"></a>
 #### Получить весь перечень ролей
