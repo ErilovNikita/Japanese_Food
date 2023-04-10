@@ -33,4 +33,4 @@ async def createAuth(
         token = token_value
     )
 
-    raise HTTPException(status_code=200, detail={ "success" : "error", "data": {"created" : created_value, "token" : token_value}})
+    raise HTTPException(status_code=200, detail={ "type" : "success", "data": {"created" : created_value, "token" : token_value}})

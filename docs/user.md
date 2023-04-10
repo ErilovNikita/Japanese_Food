@@ -4,6 +4,7 @@
 * [Получить информацию о всех сессиях](#getAllSesions) <img src="https://img.shields.io/badge/-Auth-red">
 * [Получить информацию о пользователе](#getMe) <img src="https://img.shields.io/badge/-Auth-red">
 * [Создание нового пользователя](#create) <img src="https://img.shields.io/badge/-All-green">
+* [Авторизация](#login) <img src="https://img.shields.io/badge/-All-green">
 * [Удалить пользователя](#delete) <img src="https://img.shields.io/badge/-Auth-red">
 
 
@@ -85,6 +86,45 @@
     "detail": {
         "type": "error",
         "email": "admin2@mail.ru"
+    }
+}
+```
+
+<a name="login"></a>
+#### Авторизация
+`PUT` /api/login
+##### Параметры
+``` json
+{
+    "email" : "admin2@mail.ru",
+    "hash_pass" : "123"
+}
+```
+|Название|Описание|Тип|Обязательность|
+|--------|--------|---|:--------------:|
+|email|Электронная почта|Строка|✅|
+|password|Пароль в MD5|Текст|✅|
+
+##### Ответ в случае успеха
+Код ответа `201`
+``` json
+{
+    "detail": {
+        "type": "success",
+        "data": {
+            "created": "1681131473643",
+            "token": "a8feee1dde344911a526ebd78ae9d289"
+        }
+    }
+}
+```
+
+##### Ответ в случае ошибки
+Код ответа `401`
+``` json
+{
+    "detail": {
+        "type": "error"
     }
 }
 ```
