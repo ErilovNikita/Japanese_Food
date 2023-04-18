@@ -3,7 +3,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <p class="p-3">© Japanese Food, 2023</p>
+                    <p class="p0">© Japanese Food, 2023</p>
+                    <a href="/admin">Администрирование</a>
                 </div>
                 <div class="col-12 col-md-4">
                 </div>

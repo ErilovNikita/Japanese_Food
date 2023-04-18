@@ -24,20 +24,15 @@
                     </div>
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 p-3 text-center">
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/category/bonus">Акции</router-link>
+                            <li class="nav-item" v-for="item in items">
+                                <router-link class="nav-link" :to="'/category/' + item.code">{{item.name}}</router-link>
                             </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/category/cold">Холодные роллы</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/category/premium">Премиум роллы</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/category/hot">Запеченные роллы</router-link>
-                            </li>
-                            <li class="nav-item">
-                                <router-link class="nav-link" to="/category/sets">Сеты</router-link>
+                            <li class="nav-item ms-2" >
+                                <router-link class="nav-link" style="color: rgb(214, 0, 212)" to="/cart">
+                                    <font-awesome-icon :icon="['fas', 'cart-shopping']" style="color: rgb(214, 0, 212); margin-right: 10px;" />
+                                    Корзина
+                                    <!-- <span class="badge bg-success">0</span> -->
+                                </router-link>
                             </li>
                         </ul>
                     </div>
@@ -48,9 +43,30 @@
 </template>
 
 <script>
-  export default {
-    name: 'navbar'
-  }
+    import baseURL from "@/config"
+    export default {
+        data() {
+            return { 
+                items: []
+            }
+        },
+        created() { 
+          this.getData().then((data) => {
+              this.items = data
+              console.log(data)
+          })
+        },
+        methods: {
+          async getData() {
+            const response = await fetch(`${baseURL}/api/category`, {
+              method: "GET",
+              mode: "cors"
+            });
+            const jsonData = await response.json();
+            return jsonData
+          }
+        }
+    }
 </script>
 
 <style scoped>

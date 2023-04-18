@@ -1,23 +1,42 @@
 <script setup>
+    import foodModal from '@/components/modal/food.vue' 
 </script>
 
 <template>
-    <div class="item-bloc col-6 col-md-4 col-lg-3">
-        <div class="item">
-            <div class="image">
-                <img src="https://cdn.farfor.ru/media/cache/94/02/9402a24e73f71e4fc784a4567d09ca28.jpg" class="w-100">
+    <foodModal 
+        :number = this.number
+        :name = this.name
+        :price = this.price
+        :description = this.description
+        :photo = this.photo
+    />
+    <div class="item-bloc col-6 col-md-6 col-lg-4 col-xl-3" data-bs-toggle="modal" :data-bs-target="'#food-' + this.number">
+        <div class="item shadow">
+            <div class="image text-center">
+                <img v-if="this.photo" :src="this.photo">
+                <img v-if="!this.photo" src="@/assets/image/no_image_food.png">
             </div>
             
-            <h5 class="fw-bold">Филадельфия</h5>
-            <p class="text-muted fw-light">Лосось, огурец, сыр сливочный.</p>
-            <h5 class="fw-bolder">130 ₽</h5>
+            <h5 class="fw-bold">{{this.name}}</h5>
+            <p class="text-muted fw-light">{{this.description}}</p>
+            <div class="row">
+                <div class="col-6">
+                    <h5 class="fw-bolder">{{this.price}} ₽</h5>
+                </div>
+                <div class="col-6 text-end">
+                    <h5><font-awesome-icon :icon="['fas', 'cart-shopping']" style="color: rgb(214, 0, 212); margin-right: 10px;" /></h5>
+                </div>
+            </div>
+            
         </div>
     </div>
 </template>
 
 <script>
   export default {
-    name: 'menuTopItem'
+    props: ['name','price','description', 'number', 'photo'],
+    methods: {
+    }
   }
 </script>
 
@@ -26,13 +45,17 @@
     padding: 10px;
 }
 .item {
-    padding: 20px;
+    padding: 35px;
     border-radius: 14px;
     transition: .3s;
     background-color: white;
 }
 .image {
     padding: 20px;
+}
+.image > img {
+    max-height: 150px;
+    height: 100%;
 }
 .item:hover {
     cursor: pointer;
