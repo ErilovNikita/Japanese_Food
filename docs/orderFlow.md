@@ -10,4 +10,4 @@
 - Отменен
 
 ## Переходы
-![[Untitled Diagram 2.svg]]
+![Жизненный цикл заказа](Untitled Diagram 2.svg "Жизненный цикл")
