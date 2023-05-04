@@ -2,6 +2,9 @@
 **/.vscode/
 **/.obsibian/
 
+# Release
+*.zip
+
 # Logs
 logs
 *.log
