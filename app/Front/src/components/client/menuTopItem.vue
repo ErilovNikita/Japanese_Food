@@ -7,6 +7,7 @@
         :number = this.number
         :name = this.name
         :price = this.price
+        :weight = this.weight
         :description = this.description
         :photo = this.photo
     />
@@ -14,7 +15,7 @@
         <div class="item shadow">
             <div class="image text-center">
                 <img v-if="this.photo" :src="this.photo">
-                <img v-if="!this.photo" src="@/assets/image/no_image_food.png">
+                <img class="mb-4" v-if="!this.photo" src="@/assets/image/no_image_food.png">
             </div>
             
             <h5 class="fw-bold">{{this.name}}</h5>
@@ -23,22 +24,11 @@
                 <div class="col-6">
                     <h5 class="fw-bolder">{{this.price}} ₽</h5>
                 </div>
-                <div class="col-6 text-end">
-                    <h5><font-awesome-icon :icon="['fas', 'cart-shopping']" style="color: rgb(214, 0, 212); margin-right: 10px;" /></h5>
-                </div>
             </div>
             
         </div>
     </div>
 </template>
-
-<script>
-  export default {
-    props: ['name','price','description', 'number', 'photo'],
-    methods: {
-    }
-  }
-</script>
 
 <style scoped>
 .item-bloc {
@@ -63,3 +53,11 @@
     /* background-color: rgb(238, 238, 238); */
 }
 </style>
+
+
+<script>
+
+    export default {
+        props: ['name','price','description', 'number', 'photo', 'weight'],
+    }
+</script>

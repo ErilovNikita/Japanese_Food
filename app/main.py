@@ -26,7 +26,8 @@ async def startup():
             # Дефолтные обьект
             await Role.objects.create( name = 'Администратор', code = 'admin', lock = True)
             await Role.objects.create( name = 'Пользователь', code = 'user', lock = True)
-            await User.objects.create( name = 'Анастасия', email = 'admin@mail.ru', password = '202cb962ac59075b964b07152d234b70', roles = '["admin"]' )
+            # Password 123
+            await User.objects.create( name = 'Анастасия', email = 'admin@mail.ru', password = '202cb962ac59075b964b07152d234b70', roles = '["admin"]' ) 
         except:
             print('Don`t first started')
 
@@ -35,9 +36,6 @@ async def startup():
 async def shutdown():
     if generalPosrgresBase.is_connected:
         await generalPosrgresBase.disconnect()
-
-# app.include_router(public.router, prefix="/api")
-# app.include_router(private.router, prefix="/api")
 
 app.include_router(food.router, prefix="/api/food")
 app.include_router(category.router, prefix="/api/category")

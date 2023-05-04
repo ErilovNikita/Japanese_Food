@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import baseURL from '@/config.js';
+import { useCookies } from "vue3-cookies";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -39,9 +41,9 @@ const router = createRouter({
       component: () => import('../views/client/category.vue')
     },
     {
-      path: '/food/:foodNumber',
-      name: 'Товар',
-      component: () => import('../views/client/food.vue')
+      path: '/cart',
+      name: 'Корзина',
+      component: () => import('../views/client/cart.vue')
     },
 
     {
@@ -103,5 +105,37 @@ const router = createRouter({
     }
   ]
 })
+
+router.beforeEach(async (to) => {
+  const { cookies } = useCookies();
+  const adminPage = [
+    'Роли', 'Категории', 'Заказ', 'Заказы', 'Товар', 'Товары', 'Пользователи', 'Пользователь', 'Панель администратора'
+  ];
+  const authRequired = adminPage.includes(to.name);
+
+  if ( authRequired ) {
+    if (cookies.get("token")) {
+      const settings = {
+          method: 'GET',
+          headers: {
+              'Authorization': 'Bearer ' + cookies.get("token"),
+          }
+      };
+      const response = await fetch(`${baseURL}/api/user/me`, settings)
+      const statusCode = await response.status
+      const data = await response.json();
+
+      if ( statusCode == 200 ) {
+        if ( !data.roles.includes("admin") ) {
+          return '/';
+        }
+      } else {
+        return '/login';
+      }
+    } else {
+      return '/login';
+    }
+  }
+});
 
 export default router

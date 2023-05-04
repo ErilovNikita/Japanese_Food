@@ -105,7 +105,29 @@
           },
           getDate(strTimeCode) {
               let date = new Date(Number(strTimeCode))
-              return `${date.getDate()}.${date.getMonth()}.${date.getYear() + 1900} ${date.getHours()}:${date.getMinutes()}`
+
+              let day = date.getDate()
+              let month = date.getMonth()
+              let year = date.getYear() + 1900
+
+              let hours = date.getHours()
+              let minuts = date.getMinutes()
+
+              if (day.toString().length == 1) {
+                day = '0' + day.toString()
+              }
+              if (month.toString().length == 1) {
+                month = '0' + month.toString()
+              }
+              if (hours.toString().length == 1) {
+                hours = '0' + hours.toString()
+              }
+              if (minuts.toString().length == 1) {
+                minuts = '0' + minuts.toString()
+              }
+
+
+              return `${day}.${month}.${year} ${hours}:${minuts}`
           },
           open(number) {
             window.location.href = `/admin/order/${number}`

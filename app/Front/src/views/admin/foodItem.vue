@@ -170,7 +170,7 @@
               <div class="card-body">
                 <h5 class="card-title fw-bold mb-3">Фото</h5>
                 <div class="card-text text-center">
-                  <img class="h-100 w-30" :src="this.photo">
+                  <img class="w-50" :src="this.photo">
                 </div>
               </div>
             </div>

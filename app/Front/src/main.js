@@ -22,7 +22,8 @@ import {
     faPlay,
     faDolly,
     faSquare,
-    faCheck
+    faCheck,
+    faHouse
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -44,7 +45,8 @@ library.add(
     faPlay,
     faDolly,
     faSquare,
-    faCheck
+    faCheck,
+    faHouse
 );
 
 import './assets/main.css'

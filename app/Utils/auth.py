@@ -29,14 +29,14 @@ async def createAuth(
     token_value = str( uuid.uuid4().hex )
     created_value = str( int( datetime.now(timezone.utc).timestamp() * 1000 ) )
 
-    current_sessions = current_session = await Auth.objects.all( 
+    current_sessions = await Auth.objects.all( 
         user = user_email,
         active = True
     )
 
     for session_object in current_sessions:
-        await Auth.objects.update(
-            toke = session_object.token,
+        await Auth.objects.update_or_create (
+            token = session_object.token,
             active = False
         )
 

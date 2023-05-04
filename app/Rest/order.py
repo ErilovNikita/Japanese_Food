@@ -100,6 +100,8 @@ async def addOrder(
             if foodObject:
                 current_sum += int(foodObject.price)
 
+        print(current_sum)
+
         result = await Order.objects.create(
             author = current_email,
             sum = current_sum,

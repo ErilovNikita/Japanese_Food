@@ -18,6 +18,7 @@
                 :number = food.number
                 :name = food.name
                 :price = food.price
+                :weight = food.weight
                 :photo = food.photo
                 :description = food.description
               /> 
@@ -32,10 +33,10 @@
                 :number = food.number
                 :name = food.name
                 :price = food.price
+                :weight = food.weight
                 :photo = food.photo
                 :description = food.description
               /> 
-              
           </div>
         </div>
       </div>

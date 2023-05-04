@@ -96,8 +96,8 @@
             return jsonData
           },
           async sumbit() {
-            login = document.getElementById('login').value
-            pass = document.getElementById('pass').value
+            let login = document.getElementById('login').value
+            let pass = document.getElementById('pass').value
 
             this.login(login, pass).then((data) => {
               if (data.detail.type == 'error') {

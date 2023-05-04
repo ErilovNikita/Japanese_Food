@@ -19,6 +19,9 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
+            <a href="/" class="alert alert-light p-0 text-decoration-none d-block mb-4" role="alert">
+                <font-awesome-icon :icon="['fas', 'house']" class="me-3"/>Вернуться на главную страницу сайта
+            </a>
             <a href="/admin/foods" class="alert alert-light p-0 text-decoration-none d-block" role="alert">
                 <font-awesome-icon :icon="['fas', 'utensils']" class="me-3"/>Товары
             </a>
