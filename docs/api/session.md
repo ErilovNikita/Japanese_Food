@@ -1,4 +1,4 @@
-# API | Сесии авторизации
+# API | Сессии авторизации
 
 ## Оглавление
 * [Получить весь список сессий](#getAll) <img src="https://img.shields.io/badge/-Auth-red">
